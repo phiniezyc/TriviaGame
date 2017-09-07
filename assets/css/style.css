@@ -11,13 +11,14 @@ button {
     /*text-align: center;*/
     width: 200px;
     position: absolute;
-    left: 50%;
+    left: 45%;
 }
 
 
 .jumbotron {
     background-color: lightsalmon;
     margin-top: 40px;
+    text-align: center;
 }
 
 
