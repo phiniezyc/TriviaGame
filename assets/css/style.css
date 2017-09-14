@@ -2,9 +2,7 @@ body {
     background-color: lightblue;
 }
 
-#gameHeading {
-    text-align: center;
-}
+
 
 button {
     /*margin-left: 45%;*/
@@ -19,9 +17,17 @@ button {
     background-color: lightsalmon;
     margin-top: 40px;
     text-align: center;
+    letter-spacing: 2px;
+}
+
+#gameHeading {
+    text-align: center;
 }
 
 
+#doneButton {
+    margin-top: 10px;
+}
 
 /*
 .!*answerSections {
