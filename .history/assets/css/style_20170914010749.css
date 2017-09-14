@@ -1,0 +1,41 @@
+body {
+    background-color: lightblue;
+}
+
+
+
+button {
+    /*margin-left: 45%;*/
+    /*text-align: center;*/
+    width: 200px;
+    position: absolute;
+    left: 45%;
+}
+
+
+.jumbotron {
+    background-color: lightsalmon;
+    margin-top: 40px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+#gameHeading {
+    text-align: center;
+}
+
+
+#don
+
+/*
+.!*answerSections {
+
+    height: 100px;
+    border-style: solid;
+    border-width: 5px;
+    text-align: center;
+    font-size: 35px;
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 15px;
+} *!*/

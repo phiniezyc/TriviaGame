@@ -33,11 +33,11 @@ var questions = [{
 var trivaScoring = {
     correct: 0,
     incorrect: 0,
-    counter: 10,
+    counter: 60,
     timeLeft: function() {
         trivaScoring.counter--;
-        $("#timeClock").html(trivaScoring.counter);
-        console.log(trivaScoring.counter);
+        ("#timeClock").html(tr.counter);
+        cosole.log(counter);
         if (trivaScoring.counter === 0) {
             console.log("You're done!");
             trivaScoring.over();
@@ -54,47 +54,7 @@ var trivaScoring = {
             }
         }
         $("#questionSection").after("<button value = 'hello' id = 'doneButton'> Done");
-    },
+    }
 
-    over: function() {
-        $.each($("input[name = 'question-0]': checked"), function() {
-            if($(this).val()===questions[0].correctAnswer) {
-                game.correct++;
-            }else {
-                game.incorrect++;
-            }
-        });
-        $.each($("input[name = 'question-1]': checked"), function() {
-            if($(this).val()===questions[1].correctAnswer) {
-                game.correct++;
-            }else {
-                game.incorrect++;
-            }
-        });
-        $.each($("input[name = 'question-2]': checked"), function() {
-            if($(this).val()===questions[2].correctAnswer) {
-                game.correct++;
-            }else {
-                game.incorrect++;
-            }
-        });
-        $.each($("input[name = 'question-3]': checked"), function() {
-            if($(this).val()===questions[3].correctAnswer) {
-                game.correct++;
-            }else {
-                game.incorrect++;
-            }
-        });
-        this.result();
 
-    },
-        result: function() {
-            clearInterval(timer);
-            $("#questionSection h3").remove();
-            $("#questionSection").html("<h2> Results are In! </h2>");
-            $("#questionSection").append("<h3>Correct Answers: "+ trivaScoring.correct"</h3>");
-            $("#questionSection").append("<h3>Incorrect Answers: "+ trivaScoring.incorrect"</h3>");
-            $("#questionSection").append("<h3>Unanswered Questions: "+ questions.length-(this.incorrect+this.correct))+"</h3>");
-
-        }
-};
+}
