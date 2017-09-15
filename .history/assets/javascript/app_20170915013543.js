@@ -57,7 +57,7 @@ var trivaScoring = {
     },
 
     over: function() {
-        $.each($("input[name = 'question-0']: checked"), function() {
+        $.each($("input[name = 'question-0]: checked"), function() {
             if($(this).val()===questions[0].correctAnswer) {
                 game.correct++;
             }else {
@@ -78,7 +78,7 @@ var trivaScoring = {
                 game.incorrect++;
             }
         });
-        $.each($("input[name = 'question-3']: checked"), function() {
+        $.each($("input[name = 'question-3]': checked"), function() {
             if($(this).val()===questions[3].correctAnswer) {
                 game.correct++;
             }else {
@@ -92,9 +92,9 @@ var trivaScoring = {
             clearInterval(timer);
             $("#questionSection h3").remove();
             $("#questionSection").html("<h2> Results are In! </h2>");
-            $("#questionSection").append("<h3>Correct Answers:' + trivaScoring.correct'</h3>");
-            $("#questionSection").append("<h3>Incorrect Answers:' + trivaScoring.incorrect'</h3>");
-            $("#questionSection").append("<h3>Unanswered Questions:'+ questions.length-(this.incorrect+this.correct))+'</h3>");
+            $("#questionSection").append("<h3>Correct Answers: "+ trivaScoring.correct"</h3>");
+            $("#questionSection").append("<h3>Incorrect Answers: "+ trivaScoring.incorrect"</h3>");
+            $("#questionSection").append("<h3>Unanswered Questions: "+ questions.length-(this.incorrect+this.correct))+"</h3>");
 
         }
 };

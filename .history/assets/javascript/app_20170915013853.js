@@ -92,9 +92,9 @@ var trivaScoring = {
             clearInterval(timer);
             $("#questionSection h3").remove();
             $("#questionSection").html("<h2> Results are In! </h2>");
-            $("#questionSection").append("<h3>Correct Answers:' + trivaScoring.correct'</h3>");
-            $("#questionSection").append("<h3>Incorrect Answers:' + trivaScoring.incorrect'</h3>");
-            $("#questionSection").append("<h3>Unanswered Questions:'+ questions.length-(this.incorrect+this.correct))+'</h3>");
+            $("#questionSection").append("<h3>Correct Answers:"+ trivaScoring.correct"</h3>");
+            $("#questionSection").append("<h3>Incorrect Answers: "+ trivaScoring.incorrect"</h3>");
+            $("#questionSection").append("<h3>Unanswered Questions: "+ questions.length-(this.incorrect+this.correct))+"</h3>");
 
         }
 };
