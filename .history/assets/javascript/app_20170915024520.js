@@ -82,7 +82,7 @@ var trivaScoring = {
             }
         });
         $.each($("input[name = 'question-3']:checked"), function() {
-            if($(this).val()==questions[3].correctAnswer) {
+            if($(this).val()==questions[0].correctAnswer) {
                 game.correct++;
                 console.log(game.correct);
             }else {

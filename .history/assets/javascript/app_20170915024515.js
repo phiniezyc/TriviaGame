@@ -74,15 +74,15 @@ var trivaScoring = {
             }
         });
         $.each($("input[name = 'question-2']:checked"), function() {
-            if($(this).val()==questions[2].correctAnswer) {
+            if($(this).val()==questions[0].correctAnswer) {
                 game.correct++;
                 console.log(game.correct);
             }else {
                 game.incorrect++;
             }
         });
-        $.each($("input[name = 'question-3']:checked"), function() {
-            if($(this).val()==questions[3].correctAnswer) {
+        $.each($("input[name = 'question-0']:checked"), function() {
+            if($(this).val()==questions[0].correctAnswer) {
                 game.correct++;
                 console.log(game.correct);
             }else {
