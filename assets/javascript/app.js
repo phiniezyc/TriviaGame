@@ -33,17 +33,17 @@ var questions = [{
     answers: [" University of Georgia ", " Georgia Tech ", " Georgia State ", " Emory "],
     correctAnswer: " Georgia Tech "
 }, {
-    question: " What was the profession of the person who came for the Atlanta professional football team? ",
-    answers: [" teacher ", " team namer ", " owner ", " mayor "],
-    correctAnswer: " teacher "
+    question: " What was the profession of the person that came up with the Atlanta Falcons' team name? ",
+    answers: [" Teacher ", " Professional Team Namer ", " Owner ", " Mayor "],
+    correctAnswer: " Teacher "
 }, {
     question: " Which Atlanta native wrote Gone with the Wind? ",
     answers: [" Rick Wilson ", " Shelly Moore ", " George Martin ", " Margaret Mitchell "],
     correctAnswer: " Margaret Mitchell "
 }, {
     question: " What is the best music group from the city of Atlanta? ",
-    answers: [" John Mayer ", " Future ", " Outkast ", " impossible to determine "],
-    correctAnswer: " impossible to determine "
+    answers: [" John Mayer ", " Future ", " Outkast ", " Impossible Task! "],
+    correctAnswer: " Impossible Task! "
 }];
 
 
@@ -68,15 +68,15 @@ var trivaScoring = {
         for (var i = 0; i < questions.length; i++) {
             $("#questionSection").append("<h2>" + questions[i].question + "</h2>");
             for (var j = 0; j < questions[i].answers.length; j++) {
-                $("#questionSection").append("<input type= 'radio' name='question-"+i+"' value ='"+questions[i].answers[j]+"'>"+ questions[i].answers[j])
+                $("#questionSection").append("<input type= 'radio' name='question"+i+"' value ='"+questions[i].answers[j]+"'>"+ questions[i].answers[j])
             }
         }
     },
     over: function() {
-        // Game did not total until I changed this, but doesn't match others that work still.  NO idea why!
-        $.each($("input[name='question-0']:checked"), function () {
+        // Game did not total until I changed just this if statement, but doesn't match others that work still.  NO idea why!
+        $.each($("input[name='question0']:checked"), function () {
             console.log("Test");
-            if($("input[name='question-0']:checked").val()===questions[0].correctAnswer) {
+            if($("input[name='question0']:checked").val()===questions[0].correctAnswer) {
                 console.log("if test");
                 trivaScoring.correct++;
 
@@ -86,70 +86,70 @@ var trivaScoring = {
                 console.log("Else Test");
             }
         });
-        $.each($("input[name='question-1']:checked"), function () {
+        $.each($("input[name='question1']:checked"), function () {
             if ($(this).val() === questions[1].correctAnswer) {
                 trivaScoring.correct++;
             } else {
                 trivaScoring.incorrect++;
             }
         });
-        $.each($("input[name='question-2']:checked"), function () {
+        $.each($("input[name='question2']:checked"), function () {
             if ($(this).val() === questions[2].correctAnswer) {
                 trivaScoring.correct++;
             } else {
                 trivaScoring.incorrect++;
             }
         });
-        $.each($("input[name='question-3']:checked"), function () {
+        $.each($("input[name='question3']:checked"), function () {
             if ($(this).val() === questions[3].correctAnswer) {
                 trivaScoring.correct++;
             } else {
                 trivaScoring.incorrect++;
             }
         });
-        $.each($("input[name='question-4']:checked"), function () {
+        $.each($("input[name='question4']:checked"), function () {
             if ($(this).val() === questions[4].correctAnswer) {
                 trivaScoring.correct++;
             } else {
                 trivaScoring.incorrect++;
             }
         });
-        $.each($("input[name='question-5']:checked"), function () {
+        $.each($("input[name='question5']:checked"), function () {
             if ($(this).val() === questions[5].correctAnswer) {
                 trivaScoring.correct++;
             } else {
                 trivaScoring.incorrect++;
             }
         });
-        $.each($("input[name='question-6']:checked"), function () {
+        $.each($("input[name='question6']:checked"), function () {
             if ($(this).val() === questions[6].correctAnswer) {
                 trivaScoring.correct++;
             } else {
                 trivaScoring.incorrect++;
             }
         });
-        $.each($("input[name='question-7']:checked"), function () {
+        $.each($("input[name='question7']:checked"), function () {
             if ($(this).val() === questions[7].correctAnswer) {
                 trivaScoring.correct++;
             } else {
                 trivaScoring.incorrect++;
             }
         });
-        $.each($("input[name='question-8']:checked"), function () {
+        $.each($("input[name='question8']:checked"), function () {
             if ($(this).val() === questions[8].correctAnswer) {
                 trivaScoring.correct++;
             } else {
                 trivaScoring.incorrect++;
             }
         });
-        $.each($("input[name='question-9']:checked"), function () {
+        $.each($("input[name='question9']:checked"), function () {
             if ($(this).val() === questions[9].correctAnswer) {
                 trivaScoring.correct++;
             } else {
                 trivaScoring.incorrect++;
             }
         });
-        $.each($("input[name='question-10']:checked"), function () {
+        $.each($("input[name='question10']:checked"), function () {
             if ($(this).val() === questions[10].correctAnswer) {
                 trivaScoring.correct++;
             } else {
