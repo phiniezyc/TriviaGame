@@ -50,7 +50,7 @@ var questions = [{
 var trivaScoring = {
     correct: 0,
     incorrect: 0,
-    counter: 20,
+    counter: 80,
     timeLeft: function () {
         trivaScoring.counter--;
         $("#timeClock").html(trivaScoring.counter);
@@ -62,7 +62,7 @@ var trivaScoring = {
     },
     startTimer: function () {
         timer = setInterval(trivaScoring.timeLeft, 1000);
-        $("#questionSection").prepend("<h3>Time Left: <span id = 'timeClock'>  </span> Seconds </h3>");
+        $("#questionSection").prepend("<h2>Time Left: <span id = 'timeClock'>  </span> Seconds </h2>");
         $("#startGameButton").remove();
         
         for (var i = 0; i < questions.length; i++) {
@@ -73,6 +73,7 @@ var trivaScoring = {
         }
     },
     over: function() {
+        // Game did not total until I changed this, but doesn't match others that work still.  NO idea why!
         $.each($("input[name='question-0']:checked"), function () {
             console.log("Test");
             if($("input[name='question-0']:checked").val()===questions[0].correctAnswer) {
@@ -160,7 +161,7 @@ var trivaScoring = {
     result: function () {
         clearInterval(timer);
         $("#questionSection h3").remove();
-        $("#questionSection").html("<h2> How You Did: </h2>");
+        $("#questionSection").html("<h1> How You Did: </h1>");
         $("#questionSection").append("<h3>Correct: " + this.correct + "</h3>");
         $("#questionSection").append("<h3>Incorrect: " + this.incorrect + "</h3>");
         $("#questionSection").append("<h3>Questions Left Blank: " + (questions.length - (this.incorrect + this.correct)) + "</h3>");
