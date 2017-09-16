@@ -10,7 +10,7 @@ var questions = [{
 }, {
     question: " Who is the best Brave? ",
     answers: [" Freeman ", " Inciarte ", " Tehran ", " Swanson "],
-    correctAnswer: "Freeman"
+    correctAnswer: " Freeman "
 }, {
     question: " Who is the best Hawk of All Time? ",
     answers: [" Dominique Wilkins ", " Joe Johnson ", " Pistol Pete ", " Dikembe Mutombo "],
@@ -43,50 +43,51 @@ var trivaScoring = {
         for (var i = 0; i < questions.length; i++) {
             $("#questionSection").append("<h2>" + questions[i].question + "</h2>");
             for (var j = 0; j < questions[i].answers.length; j++) {
-                $("#questionSection").append("<input type = 'radio' name= 'question-" + i + "' value = ' " + questions[i].answers[j] + "'>" + questions[i].answers[j])
+                $("#questionSection").append("<input type= 'radio' name='question-"+i+"' value ='"+questions[i].answers[j]+"'>"+ questions[i].answers[j])
             }
         }
-        //button put in to submit and end game early but haven't added any click functionality etc. 
-        //$("#questionSection").after("<button value = 'hello' id = 'doneButton'> Done");
     },
-    over: function () {
-        $.each($("input[name = 'question-0']:checked"), function () {
-            if ($(this).val() == questions[0].correctAnswer) {
+    over: function() {
+        $.each($("input[name='question-0']:checked"), function () {
+            console.log("Test");
+            if($("input[name='question-0']:checked").val()===questions[0].correctAnswer) {
+                console.log("if test");
                 trivaScoring.correct++;
-            } else {
-                trivaScoring.incorrect++;
-            }
-        });
-        $.each($("input[name = 'question-1']:checked"), function () {
-            if ($(this).val() == questions[1].correctAnswer) {
-                trivaScoring.correct++;
-            } else {
-                this.incorrect++;
-            }
-        });
-        $.each($("input[name = 'question-2']:checked"), function () {
-            if ($(this).val() == questions[2].correctAnswer) {
-                trivaScoring.correct++;
-            } else {
-                trivaScoring.incorrect++;
-            }
-        });
-        $.each($("input[name = 'question-3']:checked"), function () {
-            if ($(this).val() == questions[3].correctAnswer) {
-                trivaScoring.correct++;
-            } else {
-                trivaScoring.incorrect++;
-            }
-        });
-        this.result();
 
+
+            } else {
+                trivaScoring.incorrect++;
+                console.log("Else Test");
+            }
+        });
+        $.each($("input[name='question-1']:checked"), function () {
+            if ($(this).val() === questions[1].correctAnswer) {
+                trivaScoring.correct++;
+            } else {
+                trivaScoring.incorrect++;
+            }
+        });
+        $.each($("input[name='question-2']:checked"), function () {
+            if ($(this).val() === questions[2].correctAnswer) {
+                trivaScoring.correct++;
+            } else {
+                trivaScoring.incorrect++;
+            }
+        });
+        $.each($("input[name='question-3']:checked"), function () {
+            if ($(this).val() === questions[3].correctAnswer) {
+                trivaScoring.correct++;
+            } else {
+                trivaScoring.incorrect++;
+            }
+        });this.result();
     },
     result: function () {
         clearInterval(timer);
         $("#questionSection h3").remove();
         $("#questionSection").html("<h2> Results are In! </h2>");
-        $("#questionSection").append("<h3>Correct Answers: " + this.correct + "</h3>");
-        $("#questionSection").append("<h3>Incorrect Answers: " + this.incorrect + "</h3>");
-        $("#questionSection").append("<h3>Unanswered Questions: " + (questions.length - (this.incorrect + this.correct)) + "</h3>");
+        $("#questionSection").append("<h3>Correct: " + this.correct + "</h3>");
+        $("#questionSection").append("<h3>Incorrect: " + this.incorrect + "</h3>");
+        $("#questionSection").append("<h3>Questions Left Blank: " + (questions.length - (this.incorrect + this.correct)) + "</h3>");
     }
 };
