@@ -29,7 +29,7 @@ var questions = [{
     answers: [" Athens ", " Toronto ", " Seattle ", " Manchester "],
     correctAnswer: " Seattle "
 }, {
-    question: " Which Georgia college holds the distinction of winning by the largest margin in the sport's history ? ",
+    question: " Which Georgia college holds the distinction of winning by the largest margin in the sport's history? ",
     answers: [" University of Georgia ", " Georgia Tech ", " Georgia State ", " Emory "],
     correctAnswer: " Georgia Tech "
 }, {
